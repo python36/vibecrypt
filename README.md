@@ -30,6 +30,7 @@ Written in Ada. Uses Raiden cypher (http://raiden-cipher.sourceforge.net/)
 ```
  > vibecrypt "0123456789abcdef" test_m.txt test_c.txt -r
 ```
+### Key characters
 The key can contain one of the characters:
  ```' ', '!', '"', '#', '$', '%', '&',
  ''', '(', ')', '*', '+', ',', '-', '.', '/', '0',
