@@ -14,13 +14,4 @@ package byte_package is
   procedure increment (e : in out earth);
 
   package byte_io is new Ada.Sequential_IO(byte);
-
-
-
-
-
-function byte_shift_right (value : byte; amount : integer := 1) return byte;
-  procedure byte_print (b : byte);
-    
-
 end byte_package;

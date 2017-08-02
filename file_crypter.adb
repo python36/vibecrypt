@@ -4,7 +4,7 @@ package body file_crypter is
     raiden.init_key(key);
   end init_key;
 
-  procedure file_crypt(in_file : byte_io.File_Type; out_file : out byte_io.File_Type; mode_crypt : mode) is
+procedure file_crypt(in_file : byte_io.File_Type; out_file : out byte_io.File_Type; mode_crypt : mode) is
   type raiden_access is access procedure (x : in byte_array_8; y : out byte_array_8);
   raiden_operation : raiden_access;
   t_b : byte;

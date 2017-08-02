@@ -28,22 +28,4 @@ package body byte_package is
   begin
     e := e + 1;
   end increment;
-
-
-
-
-  function byte_shift_right (value : byte; amount : integer := 1) return byte is
-  begin
-    return byte(Interfaces.Shift_Right(
-      Value => Interfaces.Unsigned_8(value), Amount => amount));
-  end;
-
-    procedure byte_print (b : byte) is
-    type byte_chars_t is array (byte(0)..byte(15)) of character;
-    byte_chars : byte_chars_t := (
-      '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
-  begin
-    ada.text_io.put(byte_chars(byte_shift_right(b, 4)));
-    ada.text_io.put(byte_chars(b and 16#0f#));
-  end byte_print;
 end byte_package;
