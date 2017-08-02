@@ -39,7 +39,7 @@ procedure vibecrypt is
       " 'Y', 'Z', '[', '\', ']', '^', '_', '`', 'a', 'b'," & ASCII.FF & ASCII.CR &
       " 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'," & ASCII.FF & ASCII.CR &
       " 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v'," & ASCII.FF & ASCII.CR &
-      " 'w', 'x', 'y', 'z', '{', '|', '}', '~'" & ASCII.FF & ASCII.CR &);
+      " 'w', 'x', 'y', 'z', '{', '|', '}', '~'");
   end help;
 
 begin
