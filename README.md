@@ -1,4 +1,4 @@
-# Vibecrypt #
+# Vibecrypt
 Vibecrypt is very simple tool to encrypt/decrypt your file.
 
 Written in Ada. Uses Raiden cypher (http://raiden-cipher.sourceforge.net/)
@@ -12,11 +12,11 @@ Written in Ada. Uses Raiden cypher (http://raiden-cipher.sourceforge.net/)
  > mkdir obj_ali
  > gnatmake vibecrypt.adb -D ./obj_ali/
 ```
-### Help:
+### Help
 ```
  > vibecrypter -h
 ```
-### Usage:
+### Usage
 ```
  vibecrypt key -e|-d in_file out_file [-r]
   key: length from 6 to 16 characters.
@@ -26,7 +26,7 @@ Written in Ada. Uses Raiden cypher (http://raiden-cipher.sourceforge.net/)
   -d: decryption
   -r: rewrite file
  ```
-### Example:
+### Example
 ```
  > vibecrypt "0123456789abcdef" test_m.txt test_c.txt -r
 ```
