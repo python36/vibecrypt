@@ -20,7 +20,7 @@ Written in Ada. Uses Raiden cypher (http://raiden-cipher.sourceforge.net/)
 ```
  vibecrypt key -e|-d in_file out_file [-r]
   key: length from 6 to 16 characters.
-       if length < 16 - will be supplemented with underscores \(\'\_\'\).
+       if length < 16 - will be supplemented with spaces ' '.
        if length > 16 - will be truncated to 16 characters
   -e: encryption
   -d: decryption
@@ -28,7 +28,7 @@ Written in Ada. Uses Raiden cypher (http://raiden-cipher.sourceforge.net/)
  ```
 ### Example
 ```
- > vibecrypt "0123456789abcdef" test_m.txt test_c.txt -r
+ > vibecrypt "0123456789abcdef" -e test_m.txt test_c.txt -r
 ```
 ### Key characters
 The key can contain one of the characters:
