@@ -28,7 +28,7 @@ procedure vibecrypt is
       "  -d: decryption" & ASCII.FF & ASCII.CR &
       "  -r: rewrite file" & ASCII.FF & ASCII.CR &
       "Example:" & ASCII.FF & ASCII.CR &
-      " vibecrypt " & '"' & "0123456789abcdef" & '"' & " test_m.txt test_c.txt -r" & ASCII.FF & ASCII.CR &
+      " vibecrypt " & '"' & "0123456789abcdef" & '"' & "-e test_m.txt test_c.txt -r" & ASCII.FF & ASCII.CR &
       "The key can contain one of the characters:"  & ASCII.FF & ASCII.CR &
       " ' ', '!', '" & '"' & "', '#', '$', '%', '&'," & ASCII.FF & ASCII.CR &
       " ''', '(', ')', '*', '+', ',', '-', '.', '/', '0'," & ASCII.FF & ASCII.CR &
@@ -57,16 +57,17 @@ begin
   elsif Ada.Command_Line.Argument(1)'length >= 16 then
     password := Ada.Command_Line.Argument(1)(1..16);
   else
-    for i in Ada.Command_Line.Argument(1)'length..16 loop
+    password(1..Ada.Command_Line.Argument(1)'length) := Ada.Command_Line.Argument(1);
+    for i in (Ada.Command_Line.Argument(1)'length + 1)..16 loop
       password(i) := character'val(character'pos(' ') + i);
     end loop;
   end if;
   for i in 1..16 loop
+    ada.text_io.put_line(" " & password(i));
     if password(i) not in ' '..'~' then
       Ada.text_io.put_line("The key contains an invalid character");
       system.os_lib.os_exit(0);
     end if;
-    password(i) := Ada.Command_Line.Argument(1)(i);
   end loop;
 
   file_crypter.init_key(password);
