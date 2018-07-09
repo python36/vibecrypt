@@ -63,7 +63,6 @@ begin
     end loop;
   end if;
   for i in 1..16 loop
-    ada.text_io.put_line(" " & password(i));
     if password(i) not in ' '..'~' then
       Ada.text_io.put_line("The key contains an invalid character");
       system.os_lib.os_exit(0);
